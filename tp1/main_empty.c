@@ -16,6 +16,8 @@ void exercice2(void){
     
     /******************** Votre code ci-dessous ********************/
 
+    printf("Nom     : Brahim ELANDALOUSSI\nNé le   : 22.03.2000\nContact : brahim.elandaloussi@unige.ch");
+
     /******************** Votre code ci-dessus *********************/
     
     return;
@@ -26,6 +28,8 @@ void exercice3(void) {
     printf("\n\nEXERCICE 3\n\n");
     
     /******************** Votre code ci-dessous ********************/
+
+    printf("##\n#   #\n#    #\n#   #\n# #\n#    #\n#     #\n#     #\n#    #\n##");
 
     /******************** Votre code ci-dessus *********************/
 
