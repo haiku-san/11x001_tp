@@ -16,8 +16,6 @@ void exercice2(void){
     
     /******************** Votre code ci-dessous ********************/
 
-    printf("Nom     : Brahim ELANDALOUSSI\nNé le   : 22.03.2000\nContact : brahim.elandaloussi@unige.ch");
-
     /******************** Votre code ci-dessus *********************/
     
     return;
@@ -29,8 +27,6 @@ void exercice3(void) {
     
     /******************** Votre code ci-dessous ********************/
 
-    printf("##\n#   #\n#    #\n#   #\n# #\n#    #\n#     #\n#     #\n#    #\n##");
-
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -41,15 +37,6 @@ void exercice4(void) {
     printf("\n\nEXERCICE 4\n\n");
 
     /******************** Votre code ci-dessous ********************/
-
-    char u = 'U';
-    char n = 'N';
-    char i = 'I';
-    char g = 'G';
-    char e = 'E';
-
-    printf("\n%c\n%c\n%c\n%c\n%c\n", u, n, i, g, e);
-    printf("\n%c\n%c\n%c\n%c\n%c\n", e, g, i, n, u);
 
     /******************** Votre code ci-dessus *********************/
     
@@ -68,9 +55,6 @@ void exercice5(void) {
     scanf("%f", &radius);
 
     /******************** Votre code ci-dessous ********************/
-
-    float perimeter = 2*PI*radius;
-    printf("Le périmètre du cercle est %f m", perimeter);
 
     /******************** Votre code ci-dessus *********************/
 
@@ -99,11 +83,6 @@ void exercice6(void) {
 
     /******************** Votre code ci-dessous ********************/
 
-    int birth_date_in_day = birth_day + birth_month * 30 + birth_year * 30 * 12;
-    int today_date_in_day = today_day + today_month * 30 + today_year * 30 * 12;
-
-    age_in_day = today_date_in_day - birth_date_in_day;
-
     /******************** Votre code ci-dessus *********************/
 
     printf("==> Mon âge est (approximativement) de %d jours.\n", age_in_day);
@@ -122,24 +101,6 @@ void exercice7(void) {
    
     /******************** Votre code ci-dessous ********************/
 
-
-    int nb_of_years = 0;
-    int nb_of_weeks = 0;
-    int nb_of_remaining_days = 0;
-    nb_of_remaining_days = nb_of_days;
-
-    while(nb_of_remaining_days >= 365) {
-        nb_of_remaining_days = nb_of_remaining_days - 365;
-        nb_of_years++;
-    }
-
-    while(nb_of_remaining_days >= 7) {
-        nb_of_remaining_days = nb_of_remaining_days - 7;
-        nb_of_weeks++;
-    }
-
-    printf("\n%d jours font %d année(s), %d semaine(s) et %d jour(s).\n", nb_of_days, nb_of_years, nb_of_weeks, nb_of_remaining_days);
-
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -153,8 +114,6 @@ void exercice8(void) {
     float c, d;  
     
     /******************** Votre code ci-dessous ********************/
-
-    c = a / (float) b;
 
     /******************** Votre code ci-dessus *********************/
     
@@ -190,18 +149,6 @@ void exercice9(void) {
 
     /******************** Votre code ci-dessous ********************/
 
-    int d, e, f;
-
-    int size_of_int = sizeof(d);
-    printf("Le type 'int' utilise %d octets, i.e. %d bits.\n", size_of_int, 8 * size_of_int);
-
-    d = 2147483647;
-    e = 1;
-    f = d + e;
-
-    printf("%d + %d = %d\n", d, e ,f);
-
-
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -212,14 +159,14 @@ int main(void) {
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
-    // exercice1();
-    // exercice2();
-    // exercice3();
-    // exercice4();
-    // exercice5();    
-    // exercice6();
-    // exercice7();
-    // exercice8();
+    exercice1();
+    exercice2();
+    exercice3();
+    exercice4();
+    exercice5();    
+    exercice6();
+    exercice7();
+    exercice8();
     exercice9();
 
     return 0;
