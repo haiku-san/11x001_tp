@@ -324,6 +324,56 @@ void exercice6(void) {
     
     /******************** Votre code ci-dessous ********************/
 
+    struct Passager {
+        char prenom[30];
+        int siege;
+    };
+
+    struct Vol {
+        char depart[100];
+        char destination[100];
+        int duree;
+        struct Passager passagers[2];
+    };
+
+    struct Vol vols[2];
+
+
+    for(int i = 0; i < 2; i++) {
+        printf("Entrez le lieu de départ du vol %d : ", i+1);
+        scanf("%s", vols[i].depart);
+        printf("Entrez le lieu de destination du vol %d : ", i+1);
+        scanf("%s", vols[i].destination);
+        printf("Entrez la duree du vol %d :", i+1);
+        scanf("%d", &vols[i].duree);
+    }
+
+    for(int i = 0; i < 3; i++) {
+        int numero_vol;
+        numero_vol = 0;
+
+        printf("Entrez le numéro de vol du passager %d : ", i+1);
+        scanf("%d",&numero_vol);
+        printf("Entrez le prénom du passager %d : ", i+1);
+        scanf("%s", vols[numero_vol].passagers[i].prenom);
+        printf("Entrez le numéro de siège du passager %d : ", i+1);
+        scanf("%d", &vols[numero_vol].passagers[i].siege);
+    }
+
+    for(int i = 0; i < 2; i++) {
+        int nombre_passagers;
+
+        nombre_passagers = sizeof(vols[i].passagers) / sizeof(struct Passager);
+
+        printf("Le vol au départ de %s et à destination de %s d'une durée de %d h attend les passagers suivants :\n", vols[i].depart, vols[i].destination, vols[i].duree);
+
+        for(int j = 0; j < nombre_passagers; j++) {
+             printf("Prénom : %s - siège n°%d\n", vols[i].passagers[j].prenom, vols[i].passagers[j].siege);
+        }
+
+    }
+
+
     /******************** Votre code ci-dessus *********************/
 
     return;
