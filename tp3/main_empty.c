@@ -53,24 +53,9 @@ void echange(int *a, int *b) {
 
 // EXERCICE 6
 
-int factorielle_rec(int n, int acc) {
-    if (n <= 1) {
-        return acc;
-    }
-    acc *= (n - 1);
-    factorielle_rec(n-1, acc);
-}
-
 int factorielle(int n) {
     
-    int acc = 1;
-
-    acc = factorielle_rec(n-1, acc);
-
-    if (n <= 1) {
-        return acc;
-    }
-
+    
 
 }
 
