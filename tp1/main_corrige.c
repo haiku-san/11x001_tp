@@ -15,6 +15,10 @@ void exercice2(void){
     printf("\n\nEXERCICE 2\n\n");
     
     /******************** Votre code ci-dessous ********************/
+    
+    printf("Nom     : Michel LAMBDA\n");
+    printf("Né le   : 31.10.2001\n");
+    printf("Contact : michel.lambda@unige.ch\n");
 
     /******************** Votre code ci-dessus *********************/
     
@@ -26,7 +30,15 @@ void exercice3(void) {
     printf("\n\nEXERCICE 3\n\n");
     
     /******************** Votre code ci-dessous ********************/
-
+    
+    // Exemple de solution pour la lettre A :
+    printf("     #     \n");
+    printf("    # #    \n");
+    printf("   #   #   \n");
+    printf("  #######  \n");
+    printf(" #       # \n");
+    printf("#         #\n");
+    
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -37,6 +49,14 @@ void exercice4(void) {
     printf("\n\nEXERCICE 4\n\n");
 
     /******************** Votre code ci-dessous ********************/
+    
+    char c1 = 'U';
+    char c2 = 'N';
+    char c3 = 'I';
+    char c4 = 'G';
+    char c5 = 'E';
+
+    printf("À l'envers, \"%c%c%c%c%c\" s'écrit \"%c%c%c%c%c\".\n", c1, c2, c3, c4, c5, c5, c4, c3, c2, c1);
 
     /******************** Votre code ci-dessus *********************/
     
@@ -55,6 +75,13 @@ void exercice5(void) {
     scanf("%f", &radius);
 
     /******************** Votre code ci-dessous ********************/
+    
+    float perimeter, area;
+
+    perimeter = 2 * PI * radius;
+    area = PI * radius * radius;
+    
+    printf("Un cercle de rayon %f m a un périmètre de %f m et une aire de %f m^2.\n", radius, perimeter, area);
 
     /******************** Votre code ci-dessus *********************/
 
@@ -83,6 +110,9 @@ void exercice6(void) {
 
     /******************** Votre code ci-dessous ********************/
 
+    // Calculer l'âge en jour (on ignore les années bissextiles et on suppose que les mois font 30 jours)
+    age_in_day = (today_year - birth_year) * 360 + (today_month - birth_month) * 30 + (today_day - birth_day);
+
     /******************** Votre code ci-dessus *********************/
 
     printf("==> Mon âge est (approximativement) de %d jours.\n", age_in_day);
@@ -101,6 +131,14 @@ void exercice7(void) {
    
     /******************** Votre code ci-dessous ********************/
 
+    int days, weeks, years;
+
+    years = nb_of_days / 365;
+    weeks = (nb_of_days % 365) / 7;
+    days = (nb_of_days - 365 * years - 7 * weeks);
+
+    printf("%d jours font %d année(s), %d semaine(s) et %d jour(s).\n", nb_of_days, years, weeks, days);
+
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -114,7 +152,9 @@ void exercice8(void) {
     float c;  
     
     /******************** Votre code ci-dessous ********************/
-
+    
+    c = a / (float) b; // Ne modifier que cette ligne
+    
     /******************** Votre code ci-dessus *********************/
     
     printf("%d / %d = %f \n", a, b, c);
@@ -148,6 +188,16 @@ void exercice9(void) {
 
 
     /******************** Votre code ci-dessous ********************/
+
+    int d;
+    int size_of_int = sizeof(d);
+    printf("Le type 'int' utilise %d octets, c'est-à-dire %d bits.\n", size_of_int, 8 * size_of_int);
+    
+    d = pow(2, 8 * size_of_int - 1) - 1;
+    printf("Le plus grand entier de ce type est %d.\n", d);
+
+    d++;
+    printf("En ajoutant 1, on constate un overflow car notre variable vaut maintenant %d.\n", d);
 
     /******************** Votre code ci-dessus *********************/
 
