@@ -16,17 +16,63 @@
 
 int restreindre_intervalle_pure(int x, int min, int max) {
     /******************** Votre code ci-dessous ********************/
+
+    if (x < min) {
+        return min;
+    } else if (x > max) {
+        return max;
+    } else {
+        return x;
+    }
+ 
+
     /******************** Votre code ci-dessus ********************/
 }
 
 void restreindre_intervalle_bord(int *x, int min, int max) {
     /******************** Votre code ci-dessous ********************/
+
+    if (*x < min) {
+        *x = min;
+    } else if (*x > max) {
+        *x = max;
+    } else {
+        *x = *x;
+    }
+
     /******************** Votre code ci-dessus ********************/
 }
 
 // EXERCICE 5
 
+void echange(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 // EXERCICE 6
+
+int factorielle_rec(int n, int acc) {
+    if (n <= 1) {
+        return acc;
+    }
+    acc *= (n - 1);
+    factorielle_rec(n-1, acc);
+}
+
+int factorielle(int n) {
+    
+    int acc = 1;
+
+    acc = factorielle_rec(n-1, acc);
+
+    if (n <= 1) {
+        return acc;
+    }
+
+
+}
 
 // EXERCICE 7
 
@@ -167,6 +213,8 @@ void exercice5(void) {
     
     /******************** Votre code ci-dessous ********************/
 
+    echange(&a, &b);
+
     /******************** Votre code ci-dessus *********************/
 
     printf("Après l'échange, a = %d et b = %d \n", a, b);
@@ -187,6 +235,8 @@ void exercice6(void) {
     scanf("%d", &n);
 
     /******************** Votre code ci-dessous ********************/
+
+    fact_n = factorielle(n);
     
     /******************** Votre code ci-dessus *********************/
 
@@ -255,15 +305,15 @@ int main(void) {
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
-    exercice1();
-    exercice2();
-    exercice3();
-    exercice4();
-    exercice5();
+    // exercice1();
+    // exercice2();
+    // exercice3();
+    // exercice4();
+    // exercice5();
     exercice6();
-    exercice7();
-    exercice8();
-    exercice9();
+    // exercice7();
+    // exercice8();
+    // exercice9();
     
     return 0;
 }
