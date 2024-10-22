@@ -114,15 +114,40 @@ void hanoi(int nb_disques, char nom_tour_depart, char nom_tour_arrivee, char nom
     }
 
     // TODO : commenter (ou supprimer) la ligne suivante
-    hanoi_idiot(nb_disques, nom_tour_depart, nom_tour_arrivee, nom_tour_auxiliaire);
+    // hanoi_idiot(nb_disques, nom_tour_depart, nom_tour_arrivee, nom_tour_auxiliaire);
 
     /******************** Votre code ci-dessous ********************/
-    
+
     
     /******************** Votre code ci-dessus *********************/
 }
 
 // EXERCICE 8
+
+float valeur_absolue(float x) {
+    if (x >= 0) return x;
+    else return -x;
+}
+
+float racine_heron_rec(float x, float a, float precision) {
+    printf("%f\n", x);
+    if (a == 1) return 1;
+    if (valeur_absolue(x*x - a) < precision) {
+        return x;
+    } else {
+        x = (x + a/x) / 2;
+        return racine_heron_rec(x, a, precision);
+    }
+}
+
+float racine_heron(float a, float precision) {
+    float x = a / 2;
+
+    x = racine_heron_rec(x, a, precision);
+
+    return x;
+
+}
 
 
 // EXERCICE 9 
@@ -282,7 +307,7 @@ void exercice8(void) {
     scanf("%f", &precision);
     
     // TODO : Décommenter la ligne suivante une fois que la fonction ,'racine_heron' est implémentée
-    // x = racine_heron(a, precision);
+    x = racine_heron(a, precision);
 
     printf("Racine carrée de %f = %f\n", a, x);
 
@@ -316,9 +341,9 @@ int main(void) {
     // exercice3();
     // exercice4();
     // exercice5();
-    exercice6();
+    // exercice6();
     // exercice7();
-    // exercice8();
+    exercice8();
     // exercice9();
     
     return 0;
