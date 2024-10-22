@@ -3,3 +3,6 @@ clean/
 data/
 images/
 *.zip
+ca
+Agent
+ca.pub

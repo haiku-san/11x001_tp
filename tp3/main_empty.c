@@ -152,6 +152,31 @@ float racine_heron(float a, float precision) {
 
 // EXERCICE 9 
 
+float approximer_pi(int nb_points_par_axe) {
+    int nb_points_dans_cercle = 0;
+    int nb_total_points = nb_points_par_axe * nb_points_par_axe;
+    float pi = 0;
+
+    int plan[nb_points_par_axe][nb_points_par_axe];
+
+    for(int i = 0; i < nb_points_par_axe; i++) {
+        for(int j = 0; j < nb_points_par_axe; j++) {
+            plan[i][j] = i * i + j * j <= nb_total_points;
+        }
+    }
+    for(int i = 0; i < nb_points_par_axe; i++) {
+        for(int j = 0; j < nb_points_par_axe; j++) {
+            if(plan[i][j]) nb_points_dans_cercle++;
+        }
+    }
+
+    printf("Il y a %d points dans le cercle sur %d points au total\n", nb_points_dans_cercle, nb_total_points);
+
+    pi = 4.0 * (float) nb_points_dans_cercle  / (float) nb_total_points;
+    return pi;
+
+}
+
 
 /****************************/
 /* Vos fonctions ci-dessus **/
@@ -325,6 +350,9 @@ void exercice9(void) {
     scanf("%d", &nb_points_par_axe);
 
     /******************** Votre code ci-dessous ********************/
+
+    float pi = approximer_pi(nb_points_par_axe);
+    printf("Pi égal environ %f\n", pi);
         
     /******************** Votre code ci-dessus *********************/
 
@@ -343,8 +371,8 @@ int main(void) {
     // exercice5();
     // exercice6();
     // exercice7();
-    exercice8();
-    // exercice9();
+    // exercice8();
+    exercice9();
     
     return 0;
 }
