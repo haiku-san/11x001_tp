@@ -53,11 +53,29 @@ void echange(int *a, int *b) {
 
 // EXERCICE 6
 
-int factorielle(int n) {
-    
-    
 
+int factorielle(int n) {
+    if (n == 0) return 1;
+    else return n*factorielle(n-1);
 }
+
+int factorielle_iteratif(int n) {
+    int factorielle = n;
+    if(n == 0) return 1;
+    for(int i = 1; i < n; i++) {
+        factorielle *= (n - i);
+    }
+    return factorielle;
+}
+
+int coefficient_binomial(int k, int n) {
+    int fact_k = factorielle(k);
+    int fact_n = factorielle(n);
+    int fact_diff = factorielle(n - k);
+    int coefficient = fact_n / (fact_k * fact_diff);
+    return coefficient;
+}
+
 
 // EXERCICE 7
 
@@ -221,7 +239,10 @@ void exercice6(void) {
 
     /******************** Votre code ci-dessous ********************/
 
-    fact_n = factorielle(n);
+    fact_k = factorielle_iteratif(k);
+    fact_n = factorielle_iteratif(n);
+
+    k_parmi_n = coefficient_binomial(k, n);
     
     /******************** Votre code ci-dessus *********************/
 
