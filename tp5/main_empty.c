@@ -51,7 +51,7 @@ void tri_a_bulles(int liste[], int size) {
 
     do {
         has_changed = 0;
-        for(int i = 0; i < size -1; i++) {
+        for(int i = 0; i < size - 1; i++) {
             if (liste[i] > liste[i + 1]) {
                 echanger(liste, i, i + 1);
                 has_changed = 1;
@@ -67,6 +67,28 @@ void tri_a_bulles(int liste[], int size) {
 
 void tri_cocktail(int liste[], int size) {
     /******************** Votre code ci-dessous ********************/
+
+    int has_changed;
+
+    do {
+        has_changed = 0;
+        for (int i = 0; i < size - 2; i++) {
+            if (liste[i] > liste[i + 1]) {
+                echanger(liste, i, i + 1);
+                has_changed = 1;
+            }
+        }
+        if (!has_changed) return;
+        
+        has_changed = 0;
+         for (int i = size - 1; i > 0; i--) {
+            if (liste[i] < liste[i - 1]) {
+                echanger(liste, i, i - 1);
+                has_changed = 1;
+            }
+        }
+
+    } while (has_changed);
 
     /******************** Votre code ci-dessus ********************/
     return ;
@@ -180,8 +202,8 @@ int main(void) {
 
     // exercice1();
     // exercice2();
-    exercice3();
-    // exercice4();
+    // exercice3();
+    exercice4();
     
     return 0;
 }
