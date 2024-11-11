@@ -9,6 +9,12 @@
 
 int liste_est_triee(int liste[], int size) {
     /******************** Votre code ci-dessous ********************/
+    for(int i = 0; i < size - 1; i++) {
+        if(liste[i] > liste[i+1]) {
+            return 0;            
+        }
+    }
+    return 1;
 
     /******************** Votre code ci-dessus ********************/
 }
@@ -161,8 +167,8 @@ int main(void) {
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
-    // exercice1();
-    exercice2();
+    exercice1();
+    // exercice2();
     // exercice3();
     // exercice4();
     
