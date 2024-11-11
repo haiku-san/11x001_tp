@@ -25,6 +25,15 @@ void echanger(int liste[], int i, int j) {
 void tri_par_selection(int liste[], int size) {
     /******************** Votre code ci-dessous ********************/
 
+    for(int i = 0; i < size; i++) {
+        int min = i;
+        for(int j = i + 1; j < size; j++) {
+            if (liste[j] < liste[min]) {
+                echanger(liste, j, min);
+            }
+        }
+    }
+
     /******************** Votre code ci-dessus ********************/
 }
 
@@ -152,10 +161,10 @@ int main(void) {
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
-    exercice1();
+    // exercice1();
     exercice2();
-    exercice3();
-    exercice4();
+    // exercice3();
+    // exercice4();
     
     return 0;
 }
