@@ -47,6 +47,17 @@ void tri_par_selection(int liste[], int size) {
 
 void tri_a_bulles(int liste[], int size) {
     /******************** Votre code ci-dessous ********************/
+    int has_changed;
+
+    do {
+        has_changed = 0;
+        for(int i = 0; i < size -1; i++) {
+            if (liste[i] > liste[i + 1]) {
+                echanger(liste, i, i + 1);
+                has_changed = 1;
+            }
+        }
+    } while (has_changed);
 
     /******************** Votre code ci-dessus ********************/
     return ;
@@ -167,9 +178,9 @@ int main(void) {
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
-    exercice1();
+    // exercice1();
     // exercice2();
-    // exercice3();
+    exercice3();
     // exercice4();
     
     return 0;
