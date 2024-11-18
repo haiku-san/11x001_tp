@@ -19,12 +19,38 @@ void echanger(int liste[], int i, int j) {
 
 int partitionner(int liste[], int premier, int dernier, int pivot) {
     /******************** Votre code ci-dessous ********************/
+    echanger(liste, pivot, dernier);
+
+    int j = premier;
+
+    for (int i = premier; i < dernier; i++) {
+        if (liste[i] <= liste[dernier]) {
+            echanger(liste, i, j);
+            j++;
+        }
+    }
+    echanger(liste, dernier, j);
+    return j;
 
     /******************** Votre code ci-dessus ********************/
 }
 
+int choose_pivot(int liste[], int premier, int dernier) {
+    srand ( time(NULL) );
+    int pivot = (int) ((dernier - premier) * (float) rand() / (float) RAND_MAX) + premier;
+    return pivot;
+}
+
 void tri_rapide_(int liste[], int premier, int dernier) {
     /******************** Votre code ci-dessous ********************/
+    if (premier < dernier) {
+        int pivot = choose_pivot(liste, premier, dernier);
+        // int pivot = premier;
+        pivot = partitionner(liste, premier, dernier, pivot);
+        tri_rapide_(liste, premier, pivot-1);
+        tri_rapide_(liste, pivot+1, dernier);
+    }
+
 
     /******************** Votre code ci-dessus ********************/
 }
@@ -216,8 +242,8 @@ int main(void) {
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
     exercice2();
-    exercice3();
-    exercice4();
+    // exercice3();
+    // exercice4();
     
     return 0;
 }

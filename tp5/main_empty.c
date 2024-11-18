@@ -201,9 +201,9 @@ int main(void) {
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
     // exercice1();
-    // exercice2();
+    exercice2();
     // exercice3();
-    exercice4();
+    // exercice4();
     
     return 0;
 }
