@@ -20,9 +20,7 @@ void echanger(int liste[], int i, int j) {
 int partitionner(int liste[], int premier, int dernier, int pivot) {
     /******************** Votre code ci-dessous ********************/
     echanger(liste, pivot, dernier);
-
     int j = premier;
-
     for (int i = premier; i < dernier; i++) {
         if (liste[i] <= liste[dernier]) {
             echanger(liste, i, j);
@@ -31,27 +29,17 @@ int partitionner(int liste[], int premier, int dernier, int pivot) {
     }
     echanger(liste, dernier, j);
     return j;
-
     /******************** Votre code ci-dessus ********************/
-}
-
-int choose_pivot(int liste[], int premier, int dernier) {
-    srand ( time(NULL) );
-    int pivot = (int) ((dernier - premier) * (float) rand() / (float) RAND_MAX) + premier;
-    return pivot;
 }
 
 void tri_rapide_(int liste[], int premier, int dernier) {
     /******************** Votre code ci-dessous ********************/
     if (premier < dernier) {
-        int pivot = choose_pivot(liste, premier, dernier);
-        // int pivot = premier;
+        int pivot = premier + (int) ((dernier - premier) * rand() / (float) RAND_MAX);
         pivot = partitionner(liste, premier, dernier, pivot);
-        tri_rapide_(liste, premier, pivot-1);
-        tri_rapide_(liste, pivot+1, dernier);
+        tri_rapide_(liste, premier, pivot - 1);
+        tri_rapide_(liste, pivot + 1, dernier);
     }
-
-
     /******************** Votre code ci-dessus ********************/
 }
 
@@ -61,20 +49,58 @@ void tri_rapide(int liste[], int size) {
 
 // EXERCICE 3
 
-void fusion(int liste[], int low, int mid, int high) {
-    /******************** Votre code ci-dessous ********************/
+void fusion(int* T, int debut, int milieu, int fin, int* temp) {
+    int i = debut;         // Index pour la partie gauche
+    int j = milieu + 1;    // Index pour la partie droite
+    int k = debut;         // Index pour le tableau temporaire
 
-    /******************** Votre code ci-dessus ********************/
+    // Fusionner les deux sous-parties triées
+    while (i <= milieu && j <= fin) {
+        if (T[i] <= T[j]) {
+            temp[k++] = T[i++];
+        } else {
+            temp[k++] = T[j++];
+        }
+    }
+
+    // Ajouter les éléments restants de la partie gauche
+    while (i <= milieu) {
+        temp[k++] = T[i++];
+    }
+
+    // Ajouter les éléments restants de la partie droite
+    while (j <= fin) {
+        temp[k++] = T[j++];
+    }
+
+    // Copier les éléments fusionnés du tableau temporaire dans le tableau original
+    for (i = debut; i <= fin; i++) {
+        T[i] = temp[i];
+    }
 }
 
-void tri_fusion_(int liste[], int low, int high) {
-    /******************** Votre code ci-dessous ********************/
+// Fonction récursive pour effectuer le tri fusion
+void tri_fusion_(int* T, int debut, int fin, int* temp) {
+    if (debut >= fin) {
+        return; // Cas de base : un seul élément ou aucun élément
+    }
 
-    /******************** Votre code ci-dessus ********************/
+    // Trouver le milieu du tableau
+    int milieu = (debut + fin) / 2;
+
+    // Trier récursivement les deux moitiés
+    tri_fusion_(T, debut, milieu, temp);
+    tri_fusion_(T, milieu + 1, fin, temp);
+
+    // Fusionner les deux moitiés triées
+    fusion(T, debut, milieu, fin, temp);
 }
 
-void tri_fusion(int liste[], int size) {
-    tri_fusion_(liste, 0, size - 1);
+// Fonction principale pour le tri fusion
+void tri_fusion(int* T, int n) {
+    int temp[n]; // Tableau temporaire pour stocker les données lors de la fusion
+    tri_fusion_(T, 0, n - 1, temp);
+
 }
 
 /****************************/
@@ -242,8 +268,8 @@ int main(void) {
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
     exercice2();
-    // exercice3();
-    // exercice4();
+    exercice3();
+    exercice4();
     
     return 0;
 }

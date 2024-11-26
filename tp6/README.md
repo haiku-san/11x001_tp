@@ -32,6 +32,11 @@ car le compilateur va vérifier qu'elles sont bien déclarées avant leur appel.
 
 ---
 
+**Remarque** : Copier également le fichier `algorithmes_td5.c`.
+
+---
+
+
 ## Exercice 1 - Complexité
 
 **TODO** : 
@@ -154,8 +159,7 @@ fusion(left: liste, right: liste)
 **TODO** :
 
 - À la main, trier la liste fournie en utilisant le tri fusion décrit dans le pseudocode ci-dessus.
-- Implémenter la fonction `void tri_fusion(int liste[], int size)` dans le fichier `main.c`.  
-**IMPORTANT:** Votre implémentation doit trier la liste in-place et non pas retourner une nouvelle liste comme dans le pseudo-code. Gardez cela à l'esprit lors de l'implémentation en C.
+- Implémenter la fonction `void tri_fusion(int liste[], int size)` dans le fichier `main.c`.
 
 La fonction `exercice3`, déjà implémentée, teste votre fonction sur la liste fournie dans cet énoncé.
 
