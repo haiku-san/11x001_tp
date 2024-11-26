@@ -41,6 +41,14 @@ def exercice2():
 def exercice3():
     nombres = [0, 23, 5, 61, 86, 35, 51, 79, 2, 85, 15, 41, 19, 0, 3]
     # ******************** Votre code ci-dessous ********************
+    pairs, impairs = [], []
+    for nombre in nombres:
+        if nombre % 2 == 0:
+            pairs.append(nombre)
+        else:
+            impairs.append(nombre)
+    print(f"nombres pairs : {pairs}")
+    print(f"nombres impairs : {impairs}")
     
     # ******************** Votre code ci-dessus *********************
 
@@ -206,8 +214,8 @@ def verifier_sudoku(sudoku):
 if __name__ == "__main__":
 
     # exercice1()
-    exercice2()
-    # exercice3()
+    # exercice2()
+    exercice3()
     # exercice4()
     # exercice5()
     # exercice6()
