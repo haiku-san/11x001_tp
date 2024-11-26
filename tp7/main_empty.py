@@ -188,6 +188,18 @@ def demander_nombres():
 def exercice9():
     resultats = generer_resultats()
     # ******************** Votre code ci-dessous ********************
+    eleves = {}
+    for dict in resultats:
+        for eleve in dict:
+            if eleve not in eleves:
+                eleves[eleve] = [int(dict[eleve])]
+            else:
+                eleves[eleve].append(int(dict[eleve]))
+
+    for eleve in eleves:
+        nombre_notes = len(eleves[eleve])
+        moyenne = sum(eleves[eleve]) / nombre_notes
+        print(f"{eleve} : {nombre_notes} notes - {moyenne} de moyenne")
     
     # ******************** Votre code ci-dessus *********************
 
@@ -262,8 +274,8 @@ if __name__ == "__main__":
     # exercice5()
     # exercice6()
     # exercice7()
-    exercice8()
-    # exercice9()
+    # exercice8()
+    exercice9()
     # exercice10()
     # exercice11()
     # exercice12()
