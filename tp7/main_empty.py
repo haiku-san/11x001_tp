@@ -68,7 +68,10 @@ def exercice4():
 
 def fibonacci(n):
     # ******************** Votre code ci-dessous ********************
-    return 0
+    if n == 1 or n == 0:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
     # ******************** Votre code ci-dessus *********************
 
 
@@ -215,8 +218,8 @@ if __name__ == "__main__":
 
     # exercice1()
     # exercice2()
-    exercice3()
-    # exercice4()
+    # exercice3()
+    exercice4()
     # exercice5()
     # exercice6()
     # exercice7()
