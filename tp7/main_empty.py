@@ -10,6 +10,9 @@ from utils import exercice, formatter_sudoku, generer_personnes, generer_resulta
 @exercice
 def exercice1():
     # ******************** Votre code ci-dessous ********************
+    name = input("Veuillez entrer votre nom : ")
+    age = input("Veuillez entrer votre âge : ")
+    print(f"Je m'appelle {name} et j'ai {age} ans")
     pass
     # ******************** Votre code ci-dessus *********************
 
@@ -199,16 +202,16 @@ def verifier_sudoku(sudoku):
 if __name__ == "__main__":
 
     exercice1()
-    exercice2()
-    exercice3()
-    exercice4()
-    exercice5()
-    exercice6()
-    exercice7()
-    exercice8()
-    exercice9()
-    exercice10()
-    exercice11()
-    exercice12()
+    # exercice2()
+    # exercice3()
+    # exercice4()
+    # exercice5()
+    # exercice6()
+    # exercice7()
+    # exercice8()
+    # exercice9()
+    # exercice10()
+    # exercice11()
+    # exercice12()
 
 
