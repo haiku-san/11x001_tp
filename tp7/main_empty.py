@@ -108,7 +108,8 @@ def exercice6():
     liste_de_liste = [[random.randint(0, 99) for _ in range(2, 5)] for _ in range(2, 5)]
     liste_applatie = []
     # ******************** Votre code ci-dessous ********************
-    
+    for liste in liste_de_liste:
+        liste_applatie += liste
     # ******************** Votre code ci-dessus *********************
     print(f"Liste de liste : {liste_de_liste}")
     print(f"Liste applatie : {liste_applatie}")
@@ -233,8 +234,8 @@ if __name__ == "__main__":
     # exercice2()
     # exercice3()
     # exercice4()
-    exercice5()
-    # exercice6()
+    # exercice5()
+    exercice6()
     # exercice7()
     # exercice8()
     # exercice9()
