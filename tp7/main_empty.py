@@ -132,7 +132,19 @@ def exercice7():
 
 def est_palindrome(chaine):
     # ******************** Votre code ci-dessous ********************
-    return False
+    moitie_chaine = 0
+
+    if len(chaine) % 2 == 0:
+        moitie_chaine = len(chaine) / 2 + 1
+    else:
+        moitie_chaine = len(chaine) // 2 + 1
+
+    for lettre, i in zip(chaine, range(len(chaine))):
+        if i+1 == moitie_chaine:
+            return True
+        if str(lettre) != str(chaine[-1-i]):
+            return False
+    return True
     # ******************** Votre code ci-dessus *********************
 
 
@@ -235,8 +247,8 @@ if __name__ == "__main__":
     # exercice3()
     # exercice4()
     # exercice5()
-    exercice6()
-    # exercice7()
+    # exercice6()
+    exercice7()
     # exercice8()
     # exercice9()
     # exercice10()
