@@ -171,6 +171,10 @@ def exercice8():
 def demander_nombres():
     nombres = []
     # ******************** Votre code ci-dessous ********************
+    nombre = input("Veuillez entrer un entier : ")
+    while str.isdigit(nombre):
+        nombres.append(nombre)
+        nombre = input("Veuillez entrer un entier : ")
     
     # ******************** Votre code ci-dessus *********************
     return nombres
@@ -257,8 +261,8 @@ if __name__ == "__main__":
     # exercice4()
     # exercice5()
     # exercice6()
-    exercice7()
-    # exercice8()
+    # exercice7()
+    exercice8()
     # exercice9()
     # exercice10()
     # exercice11()
