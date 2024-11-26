@@ -125,26 +125,35 @@ def exercice7():
         chaine = input("Entrer une chaine de caractères (presser 'Entrée' pour sortir) : ")
         if chaine == "":
             break
-        pal = est_palindrome(chaine)
+        pal = est_palindrome(chaine, 0, len(chaine) - 1)
         verbe = "est" if pal else "n'est pas"
         print(f"'{chaine}' {verbe} un palindrome.\n")
 
 
-def est_palindrome(chaine):
+def est_palindrome(chaine, premier, dernier):
     # ******************** Votre code ci-dessous ********************
-    moitie_chaine = 0
-
-    if len(chaine) % 2 == 0:
-        moitie_chaine = len(chaine) / 2 + 1
+    # Version récursive
+    if premier >= dernier:
+        return True
     else:
-        moitie_chaine = len(chaine) // 2 + 1
-
-    for lettre, i in zip(chaine, range(len(chaine))):
-        if i+1 == moitie_chaine:
-            return True
-        if str(lettre) != str(chaine[-1-i]):
+        if chaine[premier] != chaine[dernier]:
             return False
-    return True
+        return est_palindrome(chaine, premier + 1, dernier - 1)
+    
+    # Version non récursive
+    # moitie_chaine = 0
+
+    # if len(chaine) % 2 == 0:
+    #     moitie_chaine = len(chaine) / 2
+    # else:
+    #     moitie_chaine = len(chaine) // 2
+
+    # for lettre, i in zip(chaine, range(len(chaine))):
+    #     if i == moitie_chaine:
+    #         return True
+    #     if str(lettre) != str(chaine[-1-i]):
+    #         return False
+    # return True
     # ******************** Votre code ci-dessus *********************
 
 
