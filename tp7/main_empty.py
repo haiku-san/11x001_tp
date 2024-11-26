@@ -25,7 +25,11 @@ def exercice1():
 def exercice2():
     nombres = list(range(10))
     # ******************** Votre code ci-dessous ********************
-    
+    carres = []
+    for nombre in nombres:
+        carres.append(nombre ** 2)
+    for nombre, carre in zip(nombres, carres):
+        print(nombre, carre)
     # ******************** Votre code ci-dessous ********************
 
 
@@ -201,8 +205,8 @@ def verifier_sudoku(sudoku):
 
 if __name__ == "__main__":
 
-    exercice1()
-    # exercice2()
+    # exercice1()
+    exercice2()
     # exercice3()
     # exercice4()
     # exercice5()
