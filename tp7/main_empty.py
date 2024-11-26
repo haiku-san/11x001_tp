@@ -82,6 +82,19 @@ def fibonacci(n):
 @exercice
 def exercice5():
     # ******************** Votre code ci-dessous ********************
+    a = [2, 3]
+    b = a
+    print(a)
+    print(b)
+
+    b[0] = 1
+    print(a)
+    print(b)
+
+    a = [5, 6]
+    b[0] = 10
+    print(a)
+    print(b)
     pass
     # ******************** Votre code ci-dessus *********************
 
@@ -219,8 +232,8 @@ if __name__ == "__main__":
     # exercice1()
     # exercice2()
     # exercice3()
-    exercice4()
-    # exercice5()
+    # exercice4()
+    exercice5()
     # exercice6()
     # exercice7()
     # exercice8()
