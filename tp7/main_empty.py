@@ -211,6 +211,10 @@ def exercice9():
 @exercice
 def exercice10():
     # ******************** Votre code ci-dessous ********************
+    texte = input("Veuillez entrer un texte : ")
+    mots = str.lower(texte).split(" ")
+    texte = "-".join(mots)
+    print(texte)
     pass
     # ******************** Votre code ci-dessus *********************
 
@@ -275,8 +279,8 @@ if __name__ == "__main__":
     # exercice6()
     # exercice7()
     # exercice8()
-    exercice9()
-    # exercice10()
+    # exercice9()
+    exercice10()
     # exercice11()
     # exercice12()
 
