@@ -211,10 +211,17 @@ def exercice9():
 @exercice
 def exercice10():
     # ******************** Votre code ci-dessous ********************
-    texte = input("Veuillez entrer un texte : ")
-    mots = str.lower(texte).split(" ")
-    texte = "-".join(mots)
+    # Version en une seule ligne
+    texte = "-".join(str.lower(input("Veuillez entrer un texte : ")).split(" "))
     print(texte)
+
+
+
+    # Version en plusieurs lignes
+    # texte = input("Veuillez entrer un texte : ")
+    # mots = str.lower(texte).split(" ")
+    # texte = "-".join(mots)
+    # print(texte)
     pass
     # ******************** Votre code ci-dessus *********************
 
