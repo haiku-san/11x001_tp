@@ -215,8 +215,6 @@ def exercice10():
     texte = "-".join(str.lower(input("Veuillez entrer un texte : ")).split(" "))
     print(texte)
 
-
-
     # Version en plusieurs lignes
     # texte = input("Veuillez entrer un texte : ")
     # mots = str.lower(texte).split(" ")
@@ -239,19 +237,26 @@ def exercice11():
     formatter_personnes = lambda personnes: "\n".join(map(lambda personne: f"{personne[0]} ({personne[1]})", personnes))
     print(f"\nListe de personnes aléatoires :\n{formatter_personnes(personnes)}")
 
-    tri_a_bulles(nombres)  # TODO : modifier cette ligne
+    tri_a_bulles(nombres, tri_decroissant)  # TODO : modifier cette ligne
     print(f"\nListe de nombres triée :\n{nombres}")   
 
-    tri_a_bulles(personnes)  # TODO : modifier cette ligne
+    tri_a_bulles(personnes, tri_croissant)  # TODO : modifier cette ligne
     print(f"\nListe de personnes triée :\n{formatter_personnes(personnes)}")
     
 
 # TODO : modifier cette fonction
-def tri_a_bulles(l):
+def tri_a_bulles(l, fonction_superieur):
     for i in range(len(l) - 1, 0, -1):
         for j in range(i):
-            if l[j] > l[j + 1]:
+            if fonction_superieur(l[j], l[j + 1]):
                 l[j + 1], l[j] = l[j], l[j + 1]
+
+
+def tri_croissant(a, b):
+    return a > b
+
+def tri_decroissant(a, b):
+    return a < b
 
 
 #
@@ -287,8 +292,8 @@ if __name__ == "__main__":
     # exercice7()
     # exercice8()
     # exercice9()
-    exercice10()
-    # exercice11()
+    # exercice10()
+    exercice11()
     # exercice12()
 
 
