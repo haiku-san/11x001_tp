@@ -277,9 +277,25 @@ def exercice12():
 
 def verifier_sudoku(sudoku):
     # ******************** Votre code ci-dessous ********************
-    return False
+    for nombre, i in zip(sudoku, range(len(sudoku))):
+        if verifier_ligne(nombre, i, sudoku) == False:
+            return False
+        if verifier_colonne(nombre, i, sudoku) == False:
+            return False
+    return True
     # ******************** Votre code ci-dessus *********************
 
+def verifier_ligne(nombre, i, sudoku):
+    for k in range(i+1, 9):
+        if nombre == sudoku[k]:
+            print("deux mêmes chiffres sur une ligne \n")
+            return False
+        
+def verifier_colonne(nombre, i, sudoku):
+    for k in range(i+9, 81, 9):
+        if nombre == sudoku[k]:
+            print("deux mêmes chiffres sur une colonne \n")
+            return False
 
 if __name__ == "__main__":
 
@@ -293,7 +309,7 @@ if __name__ == "__main__":
     # exercice8()
     # exercice9()
     # exercice10()
-    exercice11()
-    # exercice12()
+    # exercice11()
+    exercice12()
 
 
