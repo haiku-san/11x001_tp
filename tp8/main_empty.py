@@ -49,6 +49,16 @@ def recherche_mot_force_brute(mot, texte):
 #***** Vos fonctions ci-dessus *****
 #***********************************
 
+def levenstein(str1, str2):
+
+    size_diff = abs(len(str1) - len(str2))
+    distance = size_diff
+
+    for i, j in zip(str1, str2):
+        if i != j : distance += 1
+
+    return distance
+
 #
 # EXERCICE 1
 #
@@ -79,12 +89,16 @@ def exercice2():
 @exercice
 def exercice3():
     # ******************** Votre code ci-dessous ********************
+    mot1 = input("mot 1 = ")
+    mot2 = input("mot 2 = ")
+    distance = levenstein(mot1, mot2)
+    print(f"lenvenstein({mot1}, {mot2}) = {distance}")
     pass
     # ******************** Votre code ci-dessus *********************
 
 
 if __name__ == "__main__":
 
-    # exercice1()
+    exercice1()
     exercice2()
     exercice3()
