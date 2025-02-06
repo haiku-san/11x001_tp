@@ -23,6 +23,23 @@ def hamming(str1, str2):
 
 def recherche_mot_force_brute(mot, texte):
     # ******************** Votre code ci-dessous ********************
+    
+    idx = 0
+    first_letter = 0
+    count = 0
+    max_count = 0
+
+    for i in range(len(texte)):
+        if mot[idx] == texte[i]: 
+            count += 1
+            idx += 1
+        else: 
+            idx = 0
+            first_letter = i
+        max_count = max(max_count, count)
+        if max_count == len(mot):
+            return first_letter
+
     return -1
     # ******************** Votre code ci-dessus *********************
 
@@ -68,6 +85,6 @@ def exercice3():
 
 if __name__ == "__main__":
 
-    exercice1()
+    # exercice1()
     exercice2()
     exercice3()
