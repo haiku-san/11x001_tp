@@ -9,7 +9,14 @@ from utils import exercice, GREEN, ENDC
 
 def hamming(str1, str2):
     # ******************** Votre code ci-dessous ********************
-    return -1
+    distance = 0
+
+    if len(str1) != len(str2) : return -1
+
+    for i, j in zip(str1, str2):
+        if i != j : distance += 1
+    return distance
+
     # ******************** Votre code ci-dessus *********************
 
 # EXERCICE 2
